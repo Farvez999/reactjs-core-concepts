@@ -2,28 +2,39 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const nayoks = ['Rubel', 'BappRaz', 'Kuber', 'Jasim', 'Riyas']
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>JSX</h1>
-        <div className="container">
-          <h3>Hello Dude. React. How are you?</h3>
-        </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {
+        nayoks.map(nayok => <Person name={nayok}></Person>)
+      }
+      {/* <Person name="Rubel" nayika="Mousumi"></Person>
+      <Person name="BappRaz" nayika="Cheka"></Person>
+      <Person name="kuber" nayika="kopila"></Person>
+      <Person></Person> */}
+      <h2>New Componets....YaY!!!</h2>
+      <Friend></Friend>
+      <Friend></Friend>
     </div>
   );
+}
+
+function Person(props) {
+  console.log(props);
+  return (
+    <div className='person'>
+      <h3>Nayok : {props.name}</h3>
+      <p>Nayika : {props.nayika}</p>
+    </div>
+  )
+}
+function Friend() {
+  return (
+    <div className='friend'>
+      <h3>Basu Dev</h3>
+      <p>Job : App Developer</p>
+    </div>
+  )
 }
 
 export default App;
